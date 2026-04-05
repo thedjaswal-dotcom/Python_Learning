@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Guessing Game</title>
+</head>
+<body style="text-align:center; font-family:sans-serif;">
+
+    <h1>🎯 Number Guessing Game</h1>
+    <p>{{ message }}</p>
+    <p>Lives: {{ lives }}</p>
+
+    {% if not game_over %}
+    <form method="POST">
+        <input type="number" name="guess" required>
+        <button type="submit">Guess</button>
+    </form>
+    {% endif %}
+
+    {% if game_over %}
+    <br>
+    <a href="/restart"><button>Restart Game</button></a>
+    {% endif %}
+
+</body>
+</html>
